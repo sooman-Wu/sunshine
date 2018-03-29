@@ -1,0 +1,56 @@
+<scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+    <view wx:for="{{navSecond}}"  wx:key="navSecond" class="tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="swichNav" data-id="{{item.id}}">{{item.name}}</view>
+</scroll-view>
+<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+  <swiper-item  wx:for="{{count}}" wx:key="count">
+     <scroll-view scroll-y="true" class="scoll-h">
+     <view class="news-wrapper">
+     <block wx:if="{{newsListArray[item].length != 0}}" wx:for="{{newsListArray[item]}}" wx:key="newsListArray[item]">
+         <view class="news-lis"  wx:if="{{item.modelType==1}}">
+           <navigator url='../detail/detail?title={{item.title}}&id={{item.id}}'>
+           <view class="news-type">
+           <view class="news-type-left">
+             <view class="h1 text-hidden-line">{{item.title}}</view>
+             <view class="h2">{{item.createDate}}
+               <view>{{item.hits}}
+                 <image src='http://h5.suitaquba.com/party_image/looked.png' lazy-load></image>
+               </view>
+             </view>
+           </view>
+           <view class="news-type-right">
+             <image src="{{item.image}}" lazy-load mode='widthFix'></image>
+           </view>
+           </view>
+           </navigator>
+         </view>
+
+         <view class="news-lis" wx:if="{{item.modelType==3}}">
+           <navigator url='../detail/detail?title={{item.title}}&id={{item.id}}'>
+             <image src='{{item.image}}' class="news_img" mode='widthFix'></image>
+             <view class="h1 text-hidden-line">{{item.title}}</view>
+             <view class="h2">{{item.createDate}}
+               <view>{{item.hits}}
+                 <image src='http://h5.suitaquba.com/party_image/looked.png' lazy-load></image>
+               </view>
+             </view>
+           </navigator>
+         </view>
+         <view class="news-lis" wx:if="{{item.modelType==0||item.modelType==2}}">
+           <navigator url='../detail/detail?title={{item.title}}&id={{item.id}}'>
+             <view class="h1 text-hidden-line">{{item.title}}</view>
+             <view class="h2">{{item.createDate}}
+               <view>{{item.hits}}
+                 <image src='http://h5.suitaquba.com/party_image/looked.png' lazy-load></image>
+               </view>
+             </view>
+           </navigator>
+         </view>
+         </block>
+         <block wx:if="{{newsListArray[item].length == 0}}">
+         <image class="null" src="../../images/null.png" mode="widthFix"></image>
+         <view class="null-word">暂无内容</view>
+         </block>
+       </view>
+     </scroll-view>
+  </swiper-item>
+</swiper>

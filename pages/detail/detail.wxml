@@ -1,0 +1,20 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="news-wrapper">
+  <view class="news-lis">
+    <navigator>
+      <view class="h1 text-hidden-line">{{detail.title}}</view>
+      <view class="h2">{{detail.createDate}}
+        <view>{{detail.hits}}
+          <image src='http://h5.suitaquba.com/party_image/looked.png'></image>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>
+<view class="content-wrapper">
+  <view class="content-text">
+  <view>
+  <template is="wxParse" data="{{wxParseData:gonglue.nodes}}"/>
+  </view>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+<view class="login-box" scroll-y>
+  <image class="mine_bg" src='../../images/bg1.jpg'></image>
+  <view class="login-wrapper">
+    <image class="logo" src='../../images/logo.png' mode="widthFix"></image>
+    <view class="logo-name">三务公开</view>
+    <view class="input-box">
+      <form bindsubmit="formSubmit">
+        <view class="input-wrapper">
+          <image src='http://h5.suitaquba.com/qianShan_image/user1.png'></image>
+          <input type="text" placeholder="请输入用户名" value="" name="user" placeholder-style="color:#ffffff"/>
+        </view>
+        <view class="input-wrapper">
+          <image src='http://h5.suitaquba.com/qianShan_image/pass1.png'></image>
+          <input type="password" placeholder="请输入密码" value="" name="pass" placeholder-style="color:#ffffff"/>
+        </view>
+        <button class="login-submit" formType="submit">登录</button>
+      </form>
+    </view>
+    <view class="login-tip {{showView?'tip-show':'tip-hide'}}">
+      <text>登录失败，请重新登录！</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+<view class="edit-wrapper">
+  <image class="mine_bg" src='../../images/bg1.jpg'></image>
+  <view class="edit-box">
+    <view class="code-box">
+      <view class="h1">三务公开</view>
+      <view class="p">您身边的信息服务平台</view>
+      <image src='../../images/code.png' mode="widthFix"></image>
+      <view class="h2">扫描下载App</view>
+    </view>
+    <view class="btn-box">
+       <button class="login-submit" bindtap="loginOut">退出登录</button>
+    </view>
+  </view>
+</view>

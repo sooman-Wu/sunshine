@@ -1,0 +1,96 @@
+<view class="banner">
+  <swiper indicator-dots="true" autoplay="{{autoplay}}" indicator-color='#fff' indicator-active-color="#e50d02" interval="{{interval}}" duration="{{duration}}">
+    <block  wx:if="{{imgUrls.length != 0 }}" wx:for="{{imgUrls}}" wx:key="imgUrls">
+      <swiper-item>
+        <image src="{{item.img}}" class="slide-image" lazy-load />
+      </swiper-item>
+    </block>
+    <block  wx:if="{{imgUrls.length == 0 }}">
+    <swiper-item>
+      <image src="http://h5.suitaquba.com/qianShan_image/fengxi.jpg" class="slide-image" lazy-load mode="widthFix"/>
+    </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="album">
+  <icon class="album-img">公告/</icon>
+  <swiper autoplay="{{autoplay}}" interval="{{interval}}" vertical='true' duration="{{duration}}">
+    <block>
+      <swiper-item wx:for="{{guangbo}}" wx:key="guangbo">
+        <navigator url='../detail/detail?id={{item.id}}&title={{item.title}}'>
+          {{item.title}}
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+  <icon class="arrow-icon">
+    <image src='http://h5.suitaquba.com/qianShan_image/arrow.png'></image>
+  </icon>
+</view>
+<view class="cunwu_templet">
+  <view class="cunwu-lis" wx:for="{{category}}" wx:key="category">
+    <navigator wx:if="{{item.sort==6}}" url='../cunqing/cunqing?id={{item.id}}&areaid={{areaid}}&title={{item.name}}'>
+      <image src='{{item.appicon}}'></image>
+      <view class="h1">{{item.name}}</view>
+      <view class="p text-hidden-line">{{item.englishname}}</view>
+    </navigator>
+    <navigator wx:if="{{item.sort!=6}}" url='../news/news?id={{item.id}}&areaid={{areaid}}&title={{item.name}}'>
+      <image src='{{item.appicon}}'></image>
+      <view class="h1">{{item.name}}</view>
+      <view class="p text-hidden-line">{{item.englishname}}</view>
+    </navigator>
+  </view>
+</view>
+<view class="news-title">
+  <view class="h1">
+    <image src="../../images/ic_new.png" alt="" mode='widthFix'></image>最新公开</view>
+  <view class="p">包括党务、村务、政策</view>
+</view>
+<view class="news-wrapper">
+<block  wx:if="{{news.length != 0}}" wx:for="{{news}}" wx:key="news">
+    <view class="news-lis" wx:if="{{item.modelType==1}}">
+      <navigator url='../detail/detail?title={{item.title}}&id={{item.id}}'>
+      <view class="news-type">
+      <view class="news-type-left">
+        <view class="h1 text-hidden-line">{{item.title}}</view>
+        <view class="h2">{{item.createDate}}
+          <view>{{item.hits}}
+            <image src='http://h5.suitaquba.com/party_image/looked.png' lazy-load></image>
+          </view>
+        </view>
+      </view>
+      <view class="news-type-right">
+        <image src="{{item.image}}" lazy-load mode='widthFix'></image>
+      </view>
+      </view>
+      </navigator>
+    </view>
+    <view class="news-lis" wx:if="{{item.modelType==3}}">
+      <navigator url='../detail/detail?title={{item.title}}&id={{item.id}}'>
+        <image src='{{item.image}}' class="news_img" mode='widthFix'></image>
+        <view class="h1 text-hidden-line">{{item.title}}</view>
+        <view class="h2">{{item.createDate}}
+          <view>{{item.hits}}
+            <image src='http://h5.suitaquba.com/party_image/looked.png' lazy-load></image>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view class="news-lis" wx:if="{{item.modelType==0||item.modelType==2}}">
+      <navigator url='../detail/detail?title={{item.title}}&id={{item.id}}'>
+        <view class="h1 text-hidden-line">{{item.title}}</view>
+        <view class="h2">{{item.createDate}}
+          <view>{{item.hits}}
+            <image src='http://h5.suitaquba.com/party_image/looked.png' lazy-load></image>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    </block>
+    <block  wx:if="{{news.length == 0}}">
+    <view class='null-box'>
+    <image class="data-null" src="../../images/data_null.png" mode="widthFix"></image>
+    </view>
+        <view class="null-word">暂无内容</view>
+    </block>
+  </view>

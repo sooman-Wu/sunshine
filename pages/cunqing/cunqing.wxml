@@ -1,0 +1,17 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+    <view wx:for="{{navSecond}}"  wx:key="navSecond" class="tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="swichNav" data-id="{{item.id}}">{{item.name}}</view>
+</scroll-view>
+<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+  <swiper-item  wx:for="{{count}}" wx:key="count">
+     <scroll-view scroll-y="true" class="scoll-h">
+     <view class="content-wrapper" style="min-height: 100vh;">
+       <view class="content-text">
+       <view>
+       <template is="wxParse" data="{{wxParseData:gonglue.nodes}}"/>
+       </view>
+       </view>
+     </view>
+     </scroll-view>
+  </swiper-item>
+</swiper>

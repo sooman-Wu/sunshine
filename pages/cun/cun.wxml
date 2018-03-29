@@ -2,12 +2,12 @@
 <view class="advertisiment-banner">
   <image src='http://h5.suitaquba.com/qianShan_image/fengxi.jpg' mode='widthFix'></image>
 </view>
-<view class="title">选择您所在的街道(镇)</view>
+<view class="title">选择您所在的村</view>
 <view class="section-scroll">
   <scroll-view class="scroll-box" scroll-x style="width: 100%" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-into-view="{{toView}}" >
     <view class="scroll-view-item_H" id="street{{index}}"  wx:for="{{count}}" wx:key="count">
       <view class="street-lis" wx:for="{{street[item]}}" wx:key="street[item]">
-        <navigator url="../cun/cun?id={{item.id}}&title={{item.name}}">
+        <navigator url="../village/village?id={{item.id}}&title={{item.name}}">
           {{item.name}}
         </navigator>
       </view>
@@ -16,14 +16,10 @@
   <view size="mini"  bindtap="tap" class="controll controll-prev"><image src='../../images/prev.png' mode="widthFix"></image></view>
   <view size="mini"  bindtap="tap" class="controll controll-next"><image src='../../images/next.png' mode="widthFix"></image></view>
 </view>
-<view class="title">沣西新城简介</view>
+<view class="title">{{title}}简介</view>
 <view class="content-wrapper">
 <navigator url="../village/village">
   <template is="wxParse" data="{{wxParseData:gonglue.nodes}}"/>
 </navigator>
-</view>
-<view class="madefix">
-  <navigator url="../edit/edit">
-     <image src="../../images/make.png" mode="widthFix"></image>
-  </navigator>
+
 </view>

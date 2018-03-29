@@ -1,12 +1,19 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/village/village",
+    "pages/news/news",
+    "pages/detail/detail",
+    "pages/cun/cun",
+    "pages/login/login",
+    "pages/edit/edit",
+    "pages/cunqing/cunqing"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e50d02",
+    "navigationBarTitleText": "沣西新城",
+    "navigationBarTextStyle": "#fff"
   }
 }
