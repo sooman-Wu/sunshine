@@ -3,7 +3,7 @@
 const app = getApp()
 const url = 'https://fengxi.cunwu.suitaquba.com/a/ios/';
 var WxParse = require('../../wxParse/wxParse.js');
-var order = ['street0', 'street1', 'street0']
+var order = ['street0', 'street1', 'street2','street3','street4','street5','street0']
 Page({
   data: {
     motto: 'Hello World',

@@ -18,8 +18,13 @@
 </view>
 <view class="title">{{title}}简介</view>
 <view class="content-wrapper">
-<navigator url="../village/village">
+<navigator url="../village/village" wx:if="{{content != ''}}">
   <template is="wxParse" data="{{wxParseData:gonglue.nodes}}"/>
 </navigator>
-
+<navigator url="../village/village" wx:if="{{content == ''}}">
+<view class='null-box'>
+<image class="data-null" src="../../images/data_null.png" mode="widthFix"></image>
+</view>
+    <view class="null-word">暂无内容</view>
+</navigator>
 </view>

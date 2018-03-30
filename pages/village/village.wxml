@@ -29,12 +29,12 @@
 </view>
 <view class="cunwu_templet">
   <view class="cunwu-lis" wx:for="{{category}}" wx:key="category">
-    <navigator wx:if="{{item.sort==6}}" url='../cunqing/cunqing?id={{item.id}}&areaid={{areaid}}&title={{item.name}}'>
+    <!-- <navigator wx:if="{{item.sort==6}}" url='../cunqing/cunqing?id={{item.id}}&areaid={{areaid}}&title={{item.name}}'>
       <image src='{{item.appicon}}'></image>
       <view class="h1">{{item.name}}</view>
       <view class="p text-hidden-line">{{item.englishname}}</view>
-    </navigator>
-    <navigator wx:if="{{item.sort!=6}}" url='../news/news?id={{item.id}}&areaid={{areaid}}&title={{item.name}}'>
+    </navigator> -->
+    <navigator url='../news/news?id={{item.id}}&areaid={{areaid}}&title={{item.name}}'>
       <image src='{{item.appicon}}'></image>
       <view class="h1">{{item.name}}</view>
       <view class="p text-hidden-line">{{item.englishname}}</view>
